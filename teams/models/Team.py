@@ -10,10 +10,10 @@ class Team(models.Model):
         MS = "Middle School"
         AS = "All Service"
 
-    team_id = models.CharField(max_length=7, description="Team ID", validators=[RegexValidator(r'\d{2}-\d{4}')])
-    unique_id = models.CharField(max_length=19, description="Unique ID",
+    team_id = models.CharField(max_length=7, verbose_name="Team ID", validators=[RegexValidator(r'\d{2}-\d{4}')])
+    unique_id = models.CharField(max_length=19, verbose_name="Unique ID",
                                  validators=[RegexValidator(r'[A-z0-9]{4}(?:-[A-z0-9]{4}){3}')])
-    coach = models.ForeignKey(Coach, on_delete=models.RESTRICT, description="Coach")
+    coach = models.ForeignKey(Coach, on_delete=models.RESTRICT, verbose_name="Coach")
     division = TeamDivisionChoices.choices
 
     def __str__(self):
