@@ -14,3 +14,6 @@ class TeamScore(models.Model):
     individual_scores = JSONField(blank=True, null=True)
     total_rank = models.IntegerField()
     state_rank = models.IntegerField()
+
+    class Meta:
+        unique_together = ('team', 'round', )
