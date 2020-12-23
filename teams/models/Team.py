@@ -18,4 +18,4 @@ class Team(models.Model):
     division = TeamDivisionChoices.choices
 
     def __str__(self):
-        return self.team_id + "(" + self.coach.school.name + ")"
+        return self.team_id + " (" + self.coach.school.name + ")"
