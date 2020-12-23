@@ -13,7 +13,7 @@ class Team(models.Model):
     team_id = models.CharField(max_length=7, verbose_name="Team ID", unique=True,
                                validators=[RegexValidator(r'\d{2}-\d{4}')])
     unique_id = models.CharField(max_length=19, verbose_name="Unique ID",
-                                 validators=[RegexValidator(r'[A-z0-9]{4}(?:-[A-z0-9]{4}){3}')])
+                                 validators=[RegexValidator(r'[A-z0-9]{4}(?:-[A-z0-9]{4}){2}')])
     coach = models.ForeignKey(Coach, on_delete=models.RESTRICT, verbose_name="Coach")
     division = TeamDivisionChoices.choices
 
